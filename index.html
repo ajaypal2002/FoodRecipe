@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <div class="h-8 mt-5 flex">
+            <i class="fa fa-bars cursor-pointer"></i>
+
+            <!-- this is the search form -->
+            <h2 class="flex items-center justify-center font-bold text-xl"> Look up ingredients for your favorite dish!</h2>
+            <div class="flex items-center ml-auto bg-gray-100 custom-rounded px-4 h-10 w-1/4 border-2 border-[#F05454] text-black">
+                <input type="text" class="px-4 bg-transparent flex-grow outline-none" id="food" placeholder="Dish">
+            </div>
+            <div class="flex items-center ml-auto bg-gray-100 custom-rounded px-4 h-10 w-1/4 border-2 border-[#F05454] text-black">
+                <input type="text" class="px-4 bg-transparent flex-grow outline-none" id="cuisine" placeholder="e.g. Italian">
+            </div>
+            <button class="flex items-center ml-auto bg-gray-100 custom-rounded px-4 h-10 w-1/8 border-2 border-[#F05454] text-black text-l font-bold" type="submit" id="submit"> Search</button>
+        </div>
+    </header>
+
+    <div class="flex" v-cloak id="dribbleShot">
+        <div class="main px-10 border-r border-gray-200">
+
+            <!-- this is the left section - total ingredient price -->
+            <div class="grid grid-cols-3 mt-12 pb-20 pt-20 rounded-lg">
+                <div class="col-span-1 flex flex-col items-center shadow-xl cursor-pointer transition-colors duration-700 ease-in-out":class="{: cat.id == activeCategory}" v-for="(cat, idx) in categories">
+                    <!-- background of ingredient cost -->
+                    <div class="p-8 bg-[#4E9F3D]" id="ingredientCost">
+                        <h2 class="headingText flex items-center justify-center text-white pb-10">Cost of Ingredients:</h2>
+                        <div class="headingText flex justify-center text-white font-bold" id="sumContainer"></div>
+                        <!-- food emojis -->
+                        <div class="flex justify-center pt-10">
+                            <p style="font-size:50px">&#129361;&#129388;</p>
+                            <p style="font-size:50px">&#127812;&#129385;</p>
+                            <p style="font-size:50px">&#127834;&#127844;</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- this is the center section where the recipes and ingredients appear after a successful search -->
+                <div class="col-span-2 ">
+                    <div class="grid gap-4 grid-cols-3 grid-rows-3" id="showIngredients"></div>
+                    <div>
+                        <h2 class="flex items-center justify-center headingText" id="selectedDishName">Here's what you need</h2>
+                        <ul id="ingredientsAndPrices"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow-lg relative h-40 custom-rounded" :></div>
+
+        <!-- this is the right section - macro-nutrients -->
+        <div class="px-6" id="side-section">
+            <h3 class="headingText flex items-center justify-center" style="color:white;">Macro-nutrients</h3>
+            <div class="mt-4 justify-center">
+                <input type="text" class="bg-white hover:bg-white text-[#30475E] font-bold py-2 px-4 rounded-full" id="ingredient" placeholder="Ingredient">
+            </div>
+            <div class="mt-4 justify-center">
+                <button class="bg-white hover:bg-white text-[#30475E] font-bold py-2 px-4 rounded-full" type="submit" id="ingredientButton">Check</button>
+            </div>
+            <div id="ingredientHistory"></div>
+            <div class="mt-12 p-6 bg-white custom-rounded font-hairline text-xs">
+                <div class="mt-5 p-6 bg-white custom-rounded font-hairline text-xs" id="macroContainer"></div>
+            </div>
+            <div class="grid grid-cols-4 gap-1 mb-5"></div>
+            <div>
+                <button id="avoidButton" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Avoid this</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer>Intern Project
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html

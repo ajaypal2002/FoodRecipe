@@ -1,0 +1,81 @@
+body * {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  [v-cloak] {
+    display: none;
+  }
+  
+  header {
+    text-align: center;
+    background-color: #222831;
+    color: white;
+    padding: 50px;
+  
+  }
+  
+  #dribbleShot {
+    background-color: #FFF7E9;
+    /* background image */
+    background: url(../images/adobe071.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222831;
+    color: #FFF7E9;
+    text-align: center;
+    min-height: 10vh
+  }
+  
+  form {
+    width: 60vw;
+  }
+  
+  .main {
+    flex: 3;
+  }
+  
+  .sidebar {
+    flex: 1;
+  }
+  
+  .custom-rounded {
+    border-radius: 25px;
+  }
+  
+  .custom-tr-rounded {
+    border-radius: 0 25px 0 0;
+  }
+  
+  listHeading {
+    color: red;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+  
+  #side-section {
+    background-color: #4E9F3D;
+  }
+  
+  .headingText {
+    color: white;
+    background-color: #4E9F3D;
+    font-size: 35px;
+    text-align: center;
+    padding-bottom: 3%;
+  }
+  
+  .ingredient-btn {
+    display: block;
+    width: 50%;
+    padding: 5%;
+  }
